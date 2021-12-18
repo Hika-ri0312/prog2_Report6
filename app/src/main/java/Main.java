@@ -8,6 +8,8 @@ public class Main {
         
         Sugoroku event1 = new Sugoroku(2,20,"🐯");
 
+        Omikuzi kuzi1 = new Omikuzi("弁財天");
+
         System.out.println("おみくじすごろくゲーム開始です！");
         new Scanner(System.in).nextLine();
         player1.to_roku();
@@ -17,5 +19,6 @@ public class Main {
         new Scanner(System.in).nextLine();  
 
         event1.play();
+        kuzi1.Otuge();
     }
 }
