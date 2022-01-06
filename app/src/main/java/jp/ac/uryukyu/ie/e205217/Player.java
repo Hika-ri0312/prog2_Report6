@@ -10,6 +10,5 @@ public class Player {
     }   
     public void to_roku(){
         System.out.printf("%sさん、登録完了。%dマス目からスタート！\n", name, position);
-    }
-    
+    } 
 }

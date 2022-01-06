@@ -8,8 +8,8 @@ public class Sugoroku {
     public String koma;
 
     public Sugoroku(int num, int goal, String koma){
-        this.goal = goal;
         this.num = num;
+        this.goal = goal;
         this.koma = koma;
     }
 
@@ -17,29 +17,35 @@ public class Sugoroku {
         System.out.printf("ゴールは%dマス目です！\n",goal);
     }
     
+    public int kuji(int kuji){
+        if(kuji == 1) {        
+            System.out.println("大吉！");
+            return 3;
+        }else if(kuji == 2 || kuji == 3) {                    
+            System.out.println("中吉");
+            return 2;            
+        }else{            
+            System.out.println("吉");
+            return 1;            
+            }
+    }
+
     public void play(){
         int[] membersPos = new int[num];		
 		while (true) {
 			for (int i = 0; i < num; i++) {
 				int kuji = new Random().nextInt(8) + 1;
                 int backStep = 0;
-                if(kuji == 2) {        
-                    System.out.println("大吉！");
-                    membersPos[i] += 3; 
-                    System.out.println("3マス進む");
-                }else if(kuji == 4 || kuji == 6) {                    
-                    System.out.println("中吉");
-                    membersPos[i] += 2;
-                    System.out.println("2マス進む");
-                }else{            
-                    System.out.println("吉");
-                    membersPos[i] += 1;
-                    System.out.println("1マス進む");}         
+                int go = 0;                
+                go = kuji(kuji);
+                membersPos[i] += go;
+                String result = String.format("%sマス進む", go); 
+                System.out.println(result);       
 				if (membersPos[i] > goal) {
 					backStep = membersPos[i] - goal;
 					membersPos[i] = goal - backStep;
                 }
-				System.out.printf("P%dさん...%d(%d)%n", i + 1, kuji, membersPos[i]);
+				System.out.printf("P%dさん...%d(現在位置%dマス目)%n", i + 1, kuji, membersPos[i]);
 				if (backStep > 0) {
 					System.out.printf("ゴールを超えたので %d マス戻ります%n", backStep);
                 }
@@ -59,9 +65,10 @@ public class Sugoroku {
                     }else{
 						System.out.print(" ");
                     }
-				}if (membersPos[i] == goal) {
+				}
+                if (membersPos[i] == goal) {
 					System.out.printf("%nGoal! P%dさん の勝ちです!%n", i + 1);
-					return;
+					return; 
 				} new Scanner(System.in).nextLine();
 			}
             System.out.println();
