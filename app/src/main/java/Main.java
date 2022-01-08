@@ -1,7 +1,11 @@
 import jp.ac.uryukyu.ie.e205217.*;
 import java.util.*;
 
+
 public class Main {
+    /**
+     * メインメソッド
+     */
     public static void main(String[] args) {
         Player player1 = new Player("1", 0);
         Player player2 = new Player("2", 0);   

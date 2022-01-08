@@ -6,6 +6,12 @@ public class Sugoroku {
     public int goal;
     public int num;
     public String koma;
+    /**
+     * すごろくクラス
+     * @param num　現在位置
+     * @param goal ゴール位置
+     * @param koma　使うコマ
+     */
 
     public Sugoroku(int num, int goal, String koma){
         this.num = num;
@@ -13,10 +19,21 @@ public class Sugoroku {
         this.koma = koma;
     }
 
+    /**
+     * マップメソッド
+     * ゴール位置のアナウンスをする。
+     */
     public void map(){
         System.out.printf("ゴールは%dマス目です！\n",goal);
     }
     
+    /**
+     * くじメソッド
+     * くじを引き、進むマスを決める
+     * @param kuji くじの番号
+     * 1番は大吉、2番と3番は中吉、それ以外は吉
+     * @return　1,2,3
+     */
     public int kuji(int kuji){
         if(kuji == 1) {        
             System.out.println("大吉！");
@@ -30,6 +47,11 @@ public class Sugoroku {
             }
     }
 
+    /**
+     * プレイメソッド
+     * ゲームを実行するメソッド
+     * マスの生成、イベントの発生を行う
+     */
     public void play(){
         int[] membersPos = new int[num];		
 		while (true) {

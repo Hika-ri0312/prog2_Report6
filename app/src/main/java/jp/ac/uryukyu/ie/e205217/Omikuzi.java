@@ -1,13 +1,22 @@
 package jp.ac.uryukyu.ie.e205217;
 
 import java.util.*;
+
 public class Omikuzi{
     public String god;
+    /**
+     * おみくじクラス
+     * @param god 神様の名前
+     */
 
     public Omikuzi(String god){
         this.god = god;
     }
-
+    
+    /**
+     * お告げメソッド
+     * ゴールをしたプレイヤーに今年のお告げを伝える
+     */
     public void Otuge(){
         System.out.printf("ゴールおめでとう！%s様からの今年のお告げです\n",god);
         new Scanner(System.in).nextLine();
