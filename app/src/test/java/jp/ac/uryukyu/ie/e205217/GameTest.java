@@ -14,6 +14,6 @@ class GameTest {
     void GameTest() {
         int mobkuji = 1;
         Sugoroku mobevent = new Sugoroku(2,7,"○");
-        assertEquals(3, mobevent.kuji(mobkuji)); //testnum = kuji(kuji) 
+        assertEquals(3, mobevent.kujibiki(mobkuji)); //testnum = kuji(kuji) 
     }
 }

@@ -34,7 +34,7 @@ public class Sugoroku {
      * 1番は大吉、2番と3番は中吉、それ以外は吉
      * @return　1,2,3
      */
-    public int kuji(int kuji){
+    public int kujibiki(int kuji){
         if(kuji == 1) {        
             System.out.println("大吉！");
             return 3;
@@ -59,7 +59,7 @@ public class Sugoroku {
 				int kuji = new Random().nextInt(8) + 1;
                 int backStep = 0;
                 int go = 0;                
-                go = kuji(kuji);
+                go = kujibiki(kuji);
                 membersPos[i] += go;
                 String result = String.format("%sマス進む", go); 
                 System.out.println(result);       
