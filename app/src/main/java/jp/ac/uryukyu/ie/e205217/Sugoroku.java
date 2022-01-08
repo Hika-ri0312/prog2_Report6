@@ -3,12 +3,12 @@ package jp.ac.uryukyu.ie.e205217;
 import java.util.*;
 
 public class Sugoroku {
-    public int goal;
     public int num;
+    public int goal;
     public String koma;
     /**
      * すごろくクラス
-     * @param num　現在位置
+     * @param num　参加人数
      * @param goal ゴール位置
      * @param koma　使うコマ
      */
